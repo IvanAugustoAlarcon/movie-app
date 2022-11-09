@@ -1,9 +1,9 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 
-.cardsize{
+.card-size{
     margin-top: 2rem;
 }
-.imgcard{
+.img-card{
     height: 30rem;
 }

@@ -1,8 +1,7 @@
 import React from 'react'
-import { Routes, Route, Navigate, Link } from 'react-router-dom'
-import Action from './Action'
+import { Routes, Route, Link } from 'react-router-dom'
 import Popular from './Popular'
-import Comedy from './Comedy'
+import Home from './Home'
 
 const NavBar = () =>{
   return (
@@ -17,13 +16,10 @@ const NavBar = () =>{
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Popular</Link>
+                                <Link className="nav-link" to="/">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="action">Action</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to="comedy">Comedy</Link>
+                                <Link className="nav-link" to="popular">Popular</Link>
                             </li>
                         </ul>
                     <form className="d-flex" role="search">
@@ -36,9 +32,8 @@ const NavBar = () =>{
         </div>
 
         <Routes>
-            <Route path='/' element={<Popular/>}/>
-            <Route path='action' element={<Action/>}/>
-            <Route path='comedy' element={<Comedy/>}/>
+            <Route path='/' element={<Home/>}/>
+            <Route path='popular' element={<Popular/>}/>
             {/* pagina 404 */}
             <Route path="*" element={<h3> Page not found 404 </h3>} />
         </Routes>

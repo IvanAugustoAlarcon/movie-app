@@ -1,20 +1,20 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
-import getPopularMovies from '../services/MovieService'
+import {getPopularMovies} from '../services/MovieService'
 
 export default function Popular() {
 
   const [popularMovies, setPopularMovies] = useState([])
 
-useEffect (() => {
-  getPopularMovies().then((data) =>{
-    setPopularMovies(data.results)
-    console.log('results', data)
-  })
+  useEffect (() => {
+    getPopularMovies().then((data) =>{
+      setPopularMovies(data.results)
+      console.log('results', data)
+    })
 
-  
-},[])
+    
+  },[])
   
   return (
     <>
@@ -22,9 +22,9 @@ useEffect (() => {
       <div className='row'>
         {popularMovies && popularMovies.map((popularMovieItem, index) => ( 
 
-          <div className=' col-sm-12 col-md-6 col-lg-5 col-xl-3 cardsize' key={index}>
+          <div className=' col-sm-12 col-md-6 col-lg-5 col-xl-3 card-size' key={index}>
             <div className="card" style={{width: "18rem"}} >
-              <img className="card-img-top imgcard" src={`https://image.tmdb.org/t/p/w400/${popularMovieItem.poster_path}`} alt="Card image cap"/>
+              <img className="card-img-top img-card" src={`https://image.tmdb.org/t/p/w400/${popularMovieItem.poster_path}`} alt="Card image cap"/>
             </div>
           </div>
               
