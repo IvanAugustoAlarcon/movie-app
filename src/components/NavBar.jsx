@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route, Navigate, Link } from 'react-router-dom'
 import Action from './Action'
-import AllMovies from './AllMovies'
+import Popular from './Popular'
 import Comedy from './Comedy'
 
 const NavBar = () =>{
@@ -17,7 +17,7 @@ const NavBar = () =>{
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
+                                <Link className="nav-link" to="/">Popular</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to="action">Action</Link>
@@ -36,7 +36,7 @@ const NavBar = () =>{
         </div>
 
         <Routes>
-            <Route path='/' element={<AllMovies/>}/>
+            <Route path='/' element={<Popular/>}/>
             <Route path='action' element={<Action/>}/>
             <Route path='comedy' element={<Comedy/>}/>
             {/* pagina 404 */}

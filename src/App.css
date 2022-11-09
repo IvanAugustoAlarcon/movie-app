@@ -1,3 +1,9 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 
+.cardsize{
+    margin-top: 2rem;
+}
+.imgcard{
+    height: 30rem;
+}
