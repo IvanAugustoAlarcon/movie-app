@@ -2,20 +2,25 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import {getMovies} from '../services/MovieService'
+import {searchMovie} from '../services/MovieService'
 
 
-export default function Home() {
+export default function Home({searchvalue}) {
 
     const [movies, setMovies] = useState([])
 
     useEffect (() => {
         getMovies().then((data) =>{
         setMovies(data.results)
-        console.log('results', data)
-        })
-
-        
+        })    
     },[])
+
+    if(searchvalue.length > 0){
+        searchMovie(searchvalue).then((data) => {
+            setMovies(data.results)
+        })
+    } 
+    
 
   return (
     <>

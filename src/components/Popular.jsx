@@ -10,7 +10,6 @@ export default function Popular() {
   useEffect (() => {
     getPopularMovies().then((data) =>{
       setPopularMovies(data.results)
-      console.log('results', data)
     })
 
     
