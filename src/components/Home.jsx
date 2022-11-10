@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import {getMovies} from '../services/MovieService'
 
+
 export default function Home() {
 
     const [movies, setMovies] = useState([])
@@ -15,6 +16,7 @@ export default function Home() {
 
         
     },[])
+
   return (
     <>
         <div className="container">

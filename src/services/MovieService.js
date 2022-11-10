@@ -26,10 +26,17 @@
       }
     }
 
-    const searchMovie = async ()=>{
-      const searchResponse = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${search}`)
-      const searchData = await searchResponse.json()
-      return searchData
+    const searchMovie = async (search)=>{
+      try {
+        const searchResponse = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${search}`)
+        const searchData = await searchResponse.json()
+        console.log('busqueda',searchData)
+        return searchData
+        // console.log('Ya estamos en la funcion', search)
+        
+      } catch (error) {
+        console.log('error')
+      }
     }
 
 export {getPopularMovies, getMovies, searchMovie}
