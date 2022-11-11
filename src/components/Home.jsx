@@ -31,6 +31,8 @@ export default function Home({searchvalue}) {
             <div className=' col-sm-12 col-md-6 col-lg-5 col-xl-3 card-size' key={index}>
                 <div className="card" style={{width: "18rem"}} >
                 <img className="card-img-top img-card" src={`https://image.tmdb.org/t/p/w400/${movieItem.poster_path}`} alt="Card image cap"/>
+                <h5>{`${movieItem.title}`}</h5>
+                <p className="card-text">{`${movieItem.overview.substr(0,70)}`}</p>
                 </div>
             </div>
                 
