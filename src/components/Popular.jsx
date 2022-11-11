@@ -2,8 +2,9 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import {getPopularMovies} from '../services/MovieService'
+import {searchMovie} from '../services/MovieService'
 
-export default function Popular() {
+export default function Popular({searchvalue}) {
 
   const [popularMovies, setPopularMovies] = useState([])
 
@@ -11,9 +12,13 @@ export default function Popular() {
     getPopularMovies().then((data) =>{
       setPopularMovies(data.results)
     })
-
-    
   },[])
+
+  if(searchvalue.length > 0){
+    searchMovie(searchvalue).then((data) => {
+      setPopularMovies(data.results)
+    })
+}
   
   return (
     <>
