@@ -5,6 +5,9 @@
     margin-top: 2rem;
     /* height: 30rem; */
 }
+.card-pointer{
+    cursor: pointer;
+}
 .img-card{
     height: 25rem;
 }

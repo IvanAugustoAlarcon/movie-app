@@ -12,6 +12,7 @@ const App = () => {
   const handleSearch = (e) => {
     setSearchValue(e)
   }
+
   return (
     <div className="App">
       <NavBar handleSearch={handleSearch}/>
@@ -20,7 +21,7 @@ const App = () => {
             <Route path='popular' element={<Popular searchvalue = {searchValue}/>}/>
             {/* pagina 404 */}
             <Route path="*" element={<h3> Page not found 404 </h3>} />
-        </Routes>
+       </Routes>
     </div>
   )
   
