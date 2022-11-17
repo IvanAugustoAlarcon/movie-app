@@ -1,13 +1,21 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 
 
-.card-size{
+.card-size {
     margin-top: 2rem;
     /* height: 30rem; */
 }
-.card-pointer{
+.card-pointer {
     cursor: pointer;
 }
-.img-card{
+.img-card {
     height: 25rem;
+}
+.div-button {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
 }

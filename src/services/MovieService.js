@@ -40,5 +40,16 @@ import { useState } from "react"
       }
     }
 
+    const pageMovie = async (page) => {
+      try {
+        const pageResponse = await fetch(`${BASE_URL}page=${page}`)
+        const dataPage = await pageResponse.json()
+        return dataPage
+        
+      } catch (error) {
+        console.log('error')
+      }
+    }
 
-export {getPopularMovies, getMovies, searchMovie}
+
+export {getPopularMovies, getMovies, searchMovie, pageMovie}

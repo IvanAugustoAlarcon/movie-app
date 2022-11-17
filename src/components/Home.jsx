@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import {getMovies} from '../services/MovieService'
-import {searchMovie} from '../services/MovieService'
+import {searchMovie,pageMovie} from '../services/MovieService'
 import ModalT from './ModalT'
 
 
@@ -13,6 +13,7 @@ export default function Home({searchvalue}) {
     const [title, setTitle] = useState('')
     const [overview, setOverview] = useState('')
     const [ima,setIma] = useState('')
+    const [count, setCount] = useState(1)
     
 
     useEffect (() => {
@@ -30,6 +31,17 @@ export default function Home({searchvalue}) {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    const pageChange = (pagenum) => {
+        if((count + pagenum) > 0){
+            setCount((count) => count + pagenum)
+        }
+        
+    }
+    if(searchvalue.length == 0){
+    pageMovie(count).then((data) =>{
+        setMovies(data.results)})
+    }
+    
 
   return (
     <>
@@ -45,6 +57,10 @@ export default function Home({searchvalue}) {
                     
                 ))}
             </div>
+        </div>
+        <div className='div-button'>
+            <button  className="btn btn-light" onClick={() =>{pageChange(-1)}}>&laquo; Previous</button>
+            <button className="btn btn-light" onClick={() =>{pageChange(1)}}>Next &raquo;</button>
         </div>
         <ModalT show={show} handleClose={handleClose} title={title} overview={overview} ima={ima}/>
     </>
