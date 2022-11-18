@@ -17,10 +17,10 @@ const NavBar = (props) =>{
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" to="/">Home</Link>
+                                <Link className="nav-link" to="/movie-app">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to="popular">Popular</Link>
+                                <Link className="nav-link" to="/movie-app/popular">Popular</Link>
                             </li>
                         </ul>
                     <form className="d-flex" role="search">
